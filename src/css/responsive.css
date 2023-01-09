@@ -1,0 +1,64 @@
+@media (min-width: 900px) {
+    .menu-hamburger {
+        display: none;
+    }
+
+    .header nav {
+        display: block;
+        position: static;
+        transform: none;
+    }
+
+    .header nav ul {
+        flex-direction: row;
+        font-size: 2rem;
+    }
+
+    .main .hero {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+    }
+
+    .main .hero-information {
+        min-width: 450px;
+    }
+
+    .main .contact-btn {
+        flex-direction: row;
+    }
+
+    .social-medias a {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .main .hero img {
+        transform: scale(1.2);
+    }
+
+    .main .hero .hero-information {
+        min-width: 675px;
+    }
+
+    .main .about-me {
+        align-items: center;
+    }
+
+    .main .about-me p::after {
+        width: 2px;
+        height: 25px;
+        left: -20px;
+        top: 0;
+    }
+
+    .main .about-me .who-am-i p {
+        max-width: 1200px;
+        text-align: center;
+    }
+
+    .main .hero h2,
+    .main .hero h3 {
+        font-size: 3.4rem;
+    }
+} 
