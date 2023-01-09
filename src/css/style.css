@@ -131,7 +131,7 @@ body {
     margin-bottom: 30px;
     position: relative;
     aspect-ratio: 4/4;
-    min-width: 300px;
+    width: 300px;
     animation: bounce-image 3s linear infinite;
     z-index: -1;
 }

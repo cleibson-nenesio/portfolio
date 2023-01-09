@@ -19,6 +19,10 @@
         justify-content: space-around;
     }
 
+    .main .hero img {
+        transform: scale(1.2);
+    }
+
     .main .hero-information {
         min-width: 450px;
     }
@@ -33,10 +37,6 @@
 }
 
 @media (min-width: 1920px) {
-    .main .hero img {
-        transform: scale(1.2);
-    }
-
     .main .hero .hero-information {
         min-width: 675px;
     }
