@@ -9,6 +9,24 @@ body {
     color: var(--white);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 15px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--green);
+    border-radius: 15px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-green);
+  }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -325,9 +343,19 @@ body {
     margin-bottom: 20px;
 }
 
+.main .projects .projects-list .dark-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 0;
+}
+
 .main .projects .projects-list .project {
     background: url('https://via.placeholder.com/1080x1920') center center no-repeat;
-    display: grid;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -337,15 +365,44 @@ body {
     margin-bottom: 5px;
     aspect-ratio: 4/2;
     border-radius: 5px;
+    color: var(--white);
+    position: relative;
+}
+
+.main .projects .projects-list .project h3 {
+    text-shadow: rgba(0,0,0,0.75);
+    z-index: 1;
+}
+
+.main .projects .projects-list .project.memory-game {
+    background: url('../images/memory-game.png');
+    background-size: cover;
+}
+
+.main .projects .projects-list .project.where-in-the-world {
+    background: url('../images/where-in-the-world.png');
+    background-size: cover;
+}
+
+.main .projects .projects-list .project.pokedex {
+    background: url('../images/pokedex.png');
+    background-size: cover;
+}
+
+.main .projects .projects-list .project.password-generator {
+    background: url('../images/password-generator.png');
+    background-size: cover;
 }
 
 .main .projects .projects-list .project h3 {
     font-size: 3rem;
 }
 
-.main .projects .projects-list .project i {
+.main .projects .projects-list .project .languages-and-frameworks {
     font-size: 2rem;
-    color: var(--green);
+    color: var(--light-green);
+    display: flex;
+    gap: 5px;
 }
 
 .main .projects .projects-list .project:hover {
@@ -446,4 +503,18 @@ body {
     left: 50%;
     transform: translate(-50%);
     width: 100%;
+}
+
+[data-anime] {
+    opacity: 0;
+    transition: .5s;
+}
+
+[data-anime="left"] {
+    transform: translate3d(-50px, 0, 0);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
