@@ -400,27 +400,27 @@ body {
 }
 
 .main .projects .projects-list .project.memory-game {
-    background: url('../images/memory-game.png')center center no-repeat;
+    background: url('../images/projects/memory-game.png')center center no-repeat;
     background-size: cover;
 }
 
 .main .projects .projects-list .project.where-in-the-world {
-    background: url('../images/where-in-the-world.png')center center no-repeat;
+    background: url('../images/projects/where-in-the-world.png')center center no-repeat;
     background-size: cover;
 }
 
 .main .projects .projects-list .project.pokedex {
-    background: url('../images/pokedex.png') center center no-repeat;
+    background: url('../images/projects/pokedex.png') center center no-repeat;
     background-size: cover;
 }
 
 .main .projects .projects-list .project.password-generator {
-    background: url('../images/password-generator.png') center center no-repeat;
+    background: url('../images/projects/password-generator.png') center center no-repeat;
     background-size: cover;
 }
 
 .main .projects .projects-list .project.portfolio {
-    background: url('../images/portfolio.png') center center no-repeat;
+    background: url('../images/projects/portfolio.png') center center no-repeat;
     background-size: cover;
 }
 
