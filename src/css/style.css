@@ -7,25 +7,26 @@ body {
     font-size: 1.6rem;
     background-color: var(--dark-grey);
     color: var(--white);
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
+}
   
-  ::-webkit-scrollbar-track {
-    background: transparent;
+::-webkit-scrollbar-track {
+    background: var(--neutral);
     border-radius: 15px;
-  }
+}
   
-  ::-webkit-scrollbar-thumb {
-    background: var(--green);
-    border-radius: 15px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--dark-green);
-  }
+::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-green);
+}
 
 .header {
     display: flex;
@@ -98,13 +99,12 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     display: none;
 }
 
 .menu-hamburger:checked ~ .menu-background {
     display: block;
-    overflow: hidden;
 }
 
 .header nav{
@@ -129,6 +129,10 @@ body {
 
 .header nav ul li a:hover{
     color: var(--light-green);
+}
+
+.scroll-hidden {
+    overflow: hidden;
 }
 
 .main {
@@ -166,7 +170,8 @@ body {
 }
 
 .main .hero h3::after {
-    content: "|";
+    content: "_";
+    position: absolute;
     margin-left: 3px;
     animation: blink 500ms infinite;
     animation-delay: .8s;
@@ -313,6 +318,11 @@ body {
     left: 0;
 }
 
+.main .about-me .who-am-i {
+    color: var(--white);
+    opacity: .7;
+}
+
 .main .projects {
     display: flex;
     flex-direction: column;
@@ -343,18 +353,30 @@ body {
     margin-bottom: 20px;
 }
 
-.main .projects .projects-list .dark-background {
+.main .projects .projects-list .project .dark-background {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, .3);
-    z-index: 0;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.main .projects .projects-list .project .project-information {
+    display: none;
+    transition: .3s;
+    width: 100%;
+    height: 100%;
+}
+
+.main .projects .projects-list .project:hover .project-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .main .projects .projects-list .project {
-    background: url('https://via.placeholder.com/1080x1920') center center no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -367,57 +389,64 @@ body {
     border-radius: 5px;
     color: var(--white);
     position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.4);
 }
 
 .main .projects .projects-list .project h3 {
     text-shadow: rgba(0,0,0,0.75);
+    font-size: 3rem;
     z-index: 1;
 }
 
 .main .projects .projects-list .project.memory-game {
-    background: url('../images/memory-game.png');
+    background: url('../images/memory-game.png')center center no-repeat;
     background-size: cover;
 }
 
 .main .projects .projects-list .project.where-in-the-world {
-    background: url('../images/where-in-the-world.png');
+    background: url('../images/where-in-the-world.png')center center no-repeat;
     background-size: cover;
 }
 
 .main .projects .projects-list .project.pokedex {
-    background: url('../images/pokedex.png');
+    background: url('../images/pokedex.png') center center no-repeat;
     background-size: cover;
 }
 
 .main .projects .projects-list .project.password-generator {
-    background: url('../images/password-generator.png');
+    background: url('../images/password-generator.png') center center no-repeat;
     background-size: cover;
 }
 
-.main .projects .projects-list .project h3 {
-    font-size: 3rem;
-}
-
-.main .projects .projects-list .project .languages-and-frameworks {
-    font-size: 2rem;
-    color: var(--light-green);
-    display: flex;
-    gap: 5px;
+.main .projects .projects-list .project.portfolio {
+    background: url('../images/portfolio.png') center center no-repeat;
+    background-size: cover;
 }
 
 .main .projects .projects-list .project:hover {
     box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.75);
     transform: scale(1.1);
-    cursor: pointer;
 }
 
-.show-more {
-    width: 100%;
-    box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.3);
-    text-align: center;
-    padding: 5px;
-    border-radius: 2px;
-    cursor: pointer;
+.btn-project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.btn-project a{
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: 2px solid var(--light-green);
+}
+
+.btn-project a:hover {
+    background-color: var(--light-green);
 }
 
 .main .technologies {
@@ -464,7 +493,7 @@ body {
 }
 
 .main .technologies .languages .language:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     color: var(--green);
 }
 
@@ -507,7 +536,7 @@ body {
 
 [data-anime] {
     opacity: 0;
-    transition: .5s;
+    transition: .7s;
 }
 
 [data-anime="left"] {
